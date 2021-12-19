@@ -1,0 +1,22 @@
+.header {
+    padding: 20.4px 5.18%;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+}
+
+.header * {
+    color: #fff;
+}
+
+.logo {
+    margin-right: 6.69px;
+}
+
+.app-name {
+    font-size: 20.68px;
+}
+
+.project-number {
+    font-size: 12px;
+    font-weight: 500;
+}
