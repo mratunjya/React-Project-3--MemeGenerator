@@ -2,6 +2,10 @@
     padding: 20.4px 5.18%;
     box-sizing: border-box;
     background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 .header * {

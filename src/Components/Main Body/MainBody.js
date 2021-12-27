@@ -6,23 +6,28 @@ function MainBody() {
     const [url, setUrl] = React.useState();
     const [upper_txt, setUpper_txt] = React.useState();
     const [lower_txt, setLower_txt] = React.useState();
-    function loadMeme() {
+    const changeTopText = (event) => {
+        setUpper_txt(event.target.value);
+    }
+    const changeBottomText = (event) => {
+        setLower_txt(event.target.value);
+    }
+    function loadMeme(event) {
+        event.preventDefault();
         const memesArray = MemesData.data.memes;
         const randomIndex = Math.floor(Math.random() * memesArray.length);
         const url = memesArray[randomIndex].url;
         setUrl(url);
-        setLower_txt(document.getElementsByClassName('input')[1].value);
-        setUpper_txt(document.getElementsByClassName('input')[0].value);
     }
     return (
         <div className="main-body">
-            <main>
+            <form onSubmit={loadMeme}>
                 <div className="flex flex-space-between">
-                    <input type="text" className="input" required placeholder="Top text"></input>
-                    <input type="text" className="input" required placeholder="Bottom text"></input>
+                    <input type="text" className="input" placeholder="Top text" onChange={changeTopText} value={upper_txt} name="upper_txt"></input>
+                    <input type="text" className="input" placeholder="Bottom text" onChange={changeBottomText} value={lower_txt} name="lower_txt"></input>
                 </div>
-                <input type="submit" className="submit" value="Get a new meme image 🖼" onClick={loadMeme}></input>
-            </main>
+                <input type="submit" className="submit" value="Get a new meme image 🖼"></input>
+            </form>
             <div className="meme">
                 {url &&
                 <div>
