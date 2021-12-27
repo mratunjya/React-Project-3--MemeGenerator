@@ -1,4 +1,4 @@
-const MemesData = {
+let MemesData = {
     "success": true,
     "data": {
         "memes": [
